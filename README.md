@@ -1,25 +1,31 @@
-# 🤖 Omni AI
+# 🧠 Omni AI - Advanced Neurosymbolic AI System
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![Tests](https://img.shields.io/badge/tests-passing-green.svg)](https://github.com/pratyaypaul6187-art/omni-ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Stars](https://img.shields.io/github/stars/pratyaypaul6187-art/omni-ai.svg)](https://github.com/pratyaypaul6187-art/omni-ai/stargazers)
 
-A **safe, ethical AI toolkit** for text analysis, file processing, and automation. This project explicitly prohibits and will not include any harmful functionality, including but not limited to cyber attacks, malware creation, unauthorized access, or any activity that violates laws or ethical guidelines.
+> **A sophisticated neurosymbolic AI system with enhanced memory, multimodal processing, and Hollywood-style interface**
+
+🎬 **NOW WITH CINEMATIC GUI INTERFACE** • 🧠 **ENHANCED AI CONSCIOUSNESS** • 🔒 **SECURITY FORTRESS**
 
 ## ✨ Features
 
-- 📊 **Text Analysis**: Comprehensive readability analysis, statistics, and keyword extraction
-- 📁 **File Processing**: Safe content extraction, cleaning, and formatting for multiple file types
-- 🔄 **Batch Operations**: Process multiple files with progress tracking and detailed reports
-- 🛡️ **Safety First**: Built-in ethical guidelines and safety checks
-- 🎨 **Beautiful CLI**: Rich, colorful output with tables, progress bars, and helpful formatting
-- 🧪 **Well Tested**: Comprehensive test suite with 64% coverage
+- 🧠 **Enhanced AI Consciousness** with memory integration and multiple thinking modes
+- 🎭 **6 Thinking Modes** - Creative, Logical, Analytical, Reflective, Collaborative, Intuitive
+- 📚 **Neurosymbolic Reasoning** with knowledge graphs and symbolic logic
+- 🎬 **Hollywood-Style GUI** with cinematic interface and fortress control theme
+- 🔒 **Security Fortress** with advanced protection and monitoring systems
+- 💾 **8-Type Memory System** with million-token contexts and intelligent compression
+- 🌍 **Multimodal Processing** supporting text, image, audio, video, sensor, and temporal data
+- 🏢 **Scalable Architecture** designed for billions of parameters and distributed processing
+- 🧪 **Comprehensive Testing** with extensive test suites and performance validation
 
 ## 🚀 Quick Start
 
 ### Requirements
 - Python 3.9+
-- Windows, macOS, or Linux
+- Windows 10/11, macOS, or Linux
+- 4GB+ RAM recommended
 
 ### Installation
 
@@ -32,85 +38,178 @@ cd omni-ai
 python -m venv .venv
 
 # Activate virtual environment
-# On Windows (PowerShell):
-.\.venv\Scripts\Activate.ps1
-# On Windows (Command Prompt):
-.\.venv\Scripts\activate.bat
-# On macOS/Linux:
+# Windows:
+.venv\Scripts\activate
+# Linux/Mac:
 source .venv/bin/activate
 
-# Install the package
-pip install -e .
+# Install dependencies
+pip install -r requirements.txt
 
-# Verify installation
-omni-ai --help
+# Optional: Install GUI dependencies
+pip install customtkinter
 ```
 
-## 📋 Commands
-
-### Basic Usage
+### 🎬 Launch Options
 
 ```bash
-# Get help
-omni-ai --help
+# Launch the Hollywood-style GUI
+python launch_gui.py
 
-# Safety check (view ethical guidelines)
-omni-ai safety-check
+# Run simple natural language demo
+python simple_nl_demo.py
 
-# Friendly greeting
-omni-ai hello [name]
+# Full integration demo
+python demo_integration.py
+
+# Advanced reasoning demo
+python demo_advanced_reasoning.py
 ```
 
-### Text Analysis
+## 💻 Usage Examples
+
+### 1. Enhanced AI Consciousness
+
+```python
+from src.omni_ai.brain import create_enhanced_consciousness, EnhancedThinkingMode
+
+# Initialize the AI brain
+consciousness = await create_enhanced_consciousness(
+    memory_db_path="data/my_memory.db",
+    enable_neurosymbolic=True
+)
+
+# Use different thinking modes
+response = await consciousness.enhanced_think(
+    "Create a story about robots",
+    thinking_mode=EnhancedThinkingMode.CREATIVE
+)
+
+print(response['content'])
+```
+
+### 2. Natural Language Interface
+
+```python
+from src.omni_ai.neurosymbolic.nl_interface import NaturalLanguageInterface
+
+# Quick setup
+interface = NaturalLanguageInterface()
+
+# Ask questions
+response = await interface.process_query("What is artificial intelligence?")
+print(f"Answer: {response.answer}")
+print(f"Confidence: {response.confidence}")
+```
+
+### 3. Memory System
+
+```python
+from src.omni_ai.memory.enhanced_memory import EnhancedMemorySystem
+
+# Create memory system
+memory = EnhancedMemorySystem("data/memory.db")
+
+# Store memories
+await memory.store_memory(
+    content="Paris is the capital of France",
+    memory_type="semantic",
+    importance=0.8
+)
+
+# Search memories
+results = await memory.search_memories(
+    query="capital of France",
+    top_k=5
+)
+```
+
+### 4. Knowledge Management
+
+```python
+from src.omni_ai.neurosymbolic.knowledge_manager import KnowledgeManager
+
+# Create knowledge base
+km = KnowledgeManager("demo_knowledge_bases")
+
+# Add facts
+kb = await km.create_knowledge_base("Science Facts")
+await kb.add_fact("Earth", "orbits", "Sun")
+await kb.add_fact("Sun", "is_type", "Star")
+
+# Query knowledge
+results = await kb.query("What does Earth orbit?")
+```
+
+## 🎭 Thinking Modes
+
+Omni AI supports multiple thinking modes for different types of reasoning:
+
+- 🧮 **LOGICAL** - Symbolic reasoning and logical deduction
+- 🎨 **CREATIVE** - Creative thinking and storytelling  
+- 🔬 **ANALYTICAL** - Deep analysis and problem-solving
+- 🪞 **REFLECTIVE** - Self-reflection and introspection
+- 🤝 **COLLABORATIVE** - Multi-perspective reasoning
+- 💡 **INTUITIVE** - Pattern-based intuitive responses
+- ⚡ **ADAPTIVE** - Automatically selects best mode
+
+## 📚 Memory Types
+
+The system uses 8 hierarchical memory types:
+
+1. **Sensory** - Ultra-short term sensory input (milliseconds)
+2. **Short-term** - Working memory for active processing (minutes)
+3. **Long-term** - Persistent long-term storage (permanent)
+4. **Episodic** - Event-based memory with context
+5. **Semantic** - Factual knowledge and concepts
+6. **Procedural** - Skills and procedures
+7. **Autobiographical** - Personal history and experiences
+8. **Contextual** - Context-dependent memory
+
+## 🌍 Multimodal Capabilities
+
+Supported modalities:
+- 📝 **Text** - Natural language processing
+- 🖼️ **Image** - Computer vision and image analysis
+- 🔊 **Audio** - Speech and audio processing
+- 🎥 **Video** - Video content analysis
+- 📡 **Sensor** - IoT and sensor data
+- 📋 **Structured** - Databases and structured data
+- ⏰ **Temporal** - Time-series data
+
+## 📁 Project Structure
+
+```
+omni-ai/
+├── 🧠 src/omni_ai/
+│   ├── brain/              # AI consciousness and reasoning
+│   ├── memory/             # Enhanced memory system
+│   ├── neurosymbolic/      # Symbolic reasoning & knowledge
+│   ├── multimodal/         # Multi-modal processing
+│   ├── security/           # Security and protection
+│   └── core/               # Scalable architecture
+├── 🎬 gui/                 # Cinematic interface
+├── 📊 data/                # Memory databases
+├── 🧪 tests/               # Test suites
+├── 📚 docs/                # Documentation
+└── 🎯 demos/               # Example scripts
+```
+
+## 🎬 Hollywood-Style GUI
+
+Launch the cinematic interface:
 
 ```bash
-# Analyze text directly
-omni-ai analyze-text "Your text here"
-
-# Analyze a file
-omni-ai analyze-text --file document.txt
-
-# Detailed analysis with additional metrics
-omni-ai analyze-text --file document.txt --detailed
+python launch_gui.py
 ```
 
-**Features:**
-- Word, character, sentence, and paragraph counts
-- Readability scores (Flesch Reading Ease, Flesch-Kincaid Grade Level, Coleman-Liau Index)
-- Reading level classification
-- Syllable counts and lexical diversity (detailed mode)
-
-### File Processing
-
-```bash
-# Clean text file (remove extra whitespace, normalize formatting)
-omni-ai process-file document.txt --operation clean
-
-# Extract content from various file types
-omni-ai process-file webpage.html --operation extract
-
-# Format text with proper line wrapping
-omni-ai process-file messy.txt --operation format --output clean.txt
-```
-
-**Supported file types:**
-- Plain text (`.txt`)
-- Markdown (`.md`, `.markdown`)
-- HTML (`.html`, `.htm`)
-- Code files (`.py`, `.js`, `.java`, `.cpp`, etc.)
-
-### Batch Processing
-
-```bash
-# Analyze all text files in a directory
-omni-ai batch-process ./documents --pattern "*.txt" --operation analyze
-
-# Get info about all markdown files
-omni-ai batch-process ./docs --pattern "*.md" --operation info
-
-# Clean all text files (creates backups)
-omni-ai batch-process ./content --pattern "*.txt" --operation clean
-```
+**GUI Features:**
+- 🎭 Animated holographic displays
+- 🏰 Fortress control center theme
+- 📊 Real-time system monitoring
+- 🤖 Interactive AI chat
+- 🔒 Security status dashboard
+- 🌌 Particle effects and animations
 
 ## 🛡️ Safety & Ethics
 

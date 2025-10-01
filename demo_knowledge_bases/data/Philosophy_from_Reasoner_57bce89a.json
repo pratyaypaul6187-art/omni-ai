@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "id": "57bce89ac097071b6b78cc6c3d887cfd",
+    "name": "Philosophy from Reasoner",
+    "description": "Knowledge imported from symbolic reasoner",
+    "domain": "philosophical",
+    "version": "1.0.0",
+    "created_at": "2025-10-01T20:05:47.680037",
+    "updated_at": "2025-10-01T20:05:47.680190",
+    "author": "system",
+    "tags": [
+      "philosophical"
+    ],
+    "format": "json",
+    "facts_count": 3,
+    "rules_count": 2,
+    "entities_count": 0,
+    "relations_count": 0,
+    "checksum": ""
+  },
+  "facts": [
+    {
+      "content": "teacher_of(socrates, plato)",
+      "confidence": 0.9,
+      "source": "reasoner_import",
+      "added_at": "2025-10-01T20:05:47.680110"
+    },
+    {
+      "content": "is_a(socrates, human)",
+      "confidence": 1.0,
+      "source": "reasoner_import",
+      "added_at": "2025-10-01T20:05:47.680115"
+    },
+    {
+      "content": "is_a(plato, human)",
+      "confidence": 1.0,
+      "source": "reasoner_import",
+      "added_at": "2025-10-01T20:05:47.680118"
+    }
+  ],
+  "rules": [
+    {
+      "content": "is_a(X, human) → mortal(X)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "reasoner_import",
+      "added_at": "2025-10-01T20:05:47.680122"
+    },
+    {
+      "content": "teacher_of(X, Y) → influences(X, Y)",
+      "priority": 1,
+      "confidence": 0.8,
+      "source": "reasoner_import",
+      "added_at": "2025-10-01T20:05:47.680126"
+    }
+  ],
+  "entities": [],
+  "relations": [],
+  "custom_data": {}
+}

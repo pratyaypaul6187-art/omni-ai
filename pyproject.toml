@@ -17,6 +17,19 @@ dependencies = [
     "pathlib>=1.0.0",
     "textstat>=0.7.0",
     "nltk>=3.8.0",
+    # Security & Cryptography
+    "cryptography>=41.0.0",
+    "bcrypt>=4.0.0",
+    "pyjwt[crypto]>=2.8.0",
+    "passlib[bcrypt]>=1.7.4",
+    # Input Validation & Sanitization
+    "pydantic>=2.4.0",
+    "bleach>=6.0.0",
+    "validators>=0.22.0",
+    "python-multipart>=0.0.6",
+    # Monitoring & Logging
+    "structlog>=23.2.0",
+    "psutil>=5.9.0",
 ]
 
 [project.scripts]
@@ -29,6 +42,9 @@ dev = [
     "black>=23.0.0",
     "isort>=5.12.0",
     "mypy>=1.5.0",
+    # Security Testing
+    "bandit[toml]>=1.7.5",
+    "safety>=2.3.0",
 ]
 
 [tool.setuptools]
@@ -47,6 +63,7 @@ testpaths = ["tests"]
 markers = [
     "slow: marks tests as slow (deselect with '-m \"not slow\"')",
     "integration: marks tests as integration tests",
+    "performance: marks tests as performance tests",
 ]
 
 [tool.black]

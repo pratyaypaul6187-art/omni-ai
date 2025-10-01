@@ -1,0 +1,113 @@
+{
+  "metadata": {
+    "id": "92cf716f47a50281647ee583b29787e0",
+    "name": "Tech Stack",
+    "description": "Programming and technical knowledge",
+    "domain": "technical",
+    "version": "1.0.0",
+    "created_at": "2025-10-01T20:05:47.580750",
+    "updated_at": "2025-10-01T20:05:47.580979",
+    "author": "Demo System",
+    "tags": [
+      "technical"
+    ],
+    "format": "json",
+    "facts_count": 6,
+    "rules_count": 3,
+    "entities_count": 3,
+    "relations_count": 0,
+    "checksum": ""
+  },
+  "facts": [
+    {
+      "content": "is_a(python, programming_language)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:05:47.580764"
+    },
+    {
+      "content": "supports(python, object_oriented_programming)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:05:47.580766"
+    },
+    {
+      "content": "is_a(database, data_storage)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:05:47.580767"
+    },
+    {
+      "content": "uses(web_application, database)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:05:47.580768"
+    },
+    {
+      "content": "requires(software, hardware)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:05:47.580769"
+    },
+    {
+      "content": "connects_to(client, server)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:05:47.580770"
+    }
+  ],
+  "rules": [
+    {
+      "content": "IF is_a(X, programming_language) AND has_feature(X, garbage_collection) THEN memory_managed(X)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:05:47.580772"
+    },
+    {
+      "content": "IF load(system, X) AND X > capacity THEN performance_degraded(system)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:05:47.580773"
+    },
+    {
+      "content": "IF version(software, X) AND X < latest_version THEN needs_update(software)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:05:47.580774"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Python",
+      "type": "concept",
+      "properties": {
+        "type": "programming_language"
+      },
+      "source": "template",
+      "added_at": "2025-10-01T20:05:47.580775"
+    },
+    {
+      "name": "Database",
+      "type": "concept",
+      "properties": {
+        "category": "data_storage"
+      },
+      "source": "template",
+      "added_at": "2025-10-01T20:05:47.580777"
+    },
+    {
+      "name": "Server",
+      "type": "concept",
+      "properties": {
+        "role": "computing_resource"
+      },
+      "source": "template",
+      "added_at": "2025-10-01T20:05:47.580778"
+    }
+  ],
+  "relations": [],
+  "custom_data": {}
+}

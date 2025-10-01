@@ -1,0 +1,113 @@
+{
+  "metadata": {
+    "id": "4244937b8d34fa474290a5cb37de719c",
+    "name": "Business Logic",
+    "description": "Business processes and concepts",
+    "domain": "business",
+    "version": "1.0.0",
+    "created_at": "2025-10-01T20:04:02.959328",
+    "updated_at": "2025-10-01T20:04:02.959591",
+    "author": "Demo System",
+    "tags": [
+      "business"
+    ],
+    "format": "json",
+    "facts_count": 6,
+    "rules_count": 3,
+    "entities_count": 3,
+    "relations_count": 0,
+    "checksum": ""
+  },
+  "facts": [
+    {
+      "content": "is_a(company, organization)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.959344"
+    },
+    {
+      "content": "has_role(ceo, leadership)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.959346"
+    },
+    {
+      "content": "generates(company, revenue)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.959348"
+    },
+    {
+      "content": "has_expense(company, operating_costs)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.959349"
+    },
+    {
+      "content": "serves(company, customers)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.959350"
+    },
+    {
+      "content": "competes_with(company_a, company_b)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.959351"
+    }
+  ],
+  "rules": [
+    {
+      "content": "IF revenue(X, R) AND expenses(X, E) AND R > E THEN profitable(X)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.959353"
+    },
+    {
+      "content": "IF satisfies(company, customer_needs) THEN likely_success(company)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.959354"
+    },
+    {
+      "content": "IF market_share(X, Y) AND Y > 50 THEN market_leader(X)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.959355"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Corporation",
+      "type": "organization",
+      "properties": {
+        "business_type": "for_profit"
+      },
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.959357"
+    },
+    {
+      "name": "CEO",
+      "type": "person",
+      "properties": {
+        "role": "executive"
+      },
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.959359"
+    },
+    {
+      "name": "Market",
+      "type": "concept",
+      "properties": {
+        "type": "economic"
+      },
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.959360"
+    }
+  ],
+  "relations": [],
+  "custom_data": {}
+}

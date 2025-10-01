@@ -1,0 +1,113 @@
+{
+  "metadata": {
+    "id": "2711bcc848026fd18de00c95ffcaf5cc",
+    "name": "Philosophy",
+    "description": "Philosophical concepts and thinkers",
+    "domain": "philosophical",
+    "version": "1.0.0",
+    "created_at": "2025-10-01T20:04:02.943451",
+    "updated_at": "2025-10-01T20:04:02.943898",
+    "author": "Demo System",
+    "tags": [
+      "philosophical"
+    ],
+    "format": "json",
+    "facts_count": 6,
+    "rules_count": 3,
+    "entities_count": 3,
+    "relations_count": 0,
+    "checksum": ""
+  },
+  "facts": [
+    {
+      "content": "is_a(socrates, philosopher)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.943465"
+    },
+    {
+      "content": "believes(socrates, examined_life)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.943467"
+    },
+    {
+      "content": "is_a(consciousness, mental_state)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.943469"
+    },
+    {
+      "content": "has_property(human, free_will)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.943470"
+    },
+    {
+      "content": "questions(philosophy, existence)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.943471"
+    },
+    {
+      "content": "seeks(philosophy, truth)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.943472"
+    }
+  ],
+  "rules": [
+    {
+      "content": "IF is_a(X, human) AND has_property(X, consciousness) THEN capable_of(X, thought)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.943473"
+    },
+    {
+      "content": "IF questions(X, fundamental_nature) THEN philosophical_inquiry(X)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.943475"
+    },
+    {
+      "content": "IF seeks(X, wisdom) AND practices(X, philosophy) THEN philosopher(X)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.943476"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Socrates",
+      "type": "person",
+      "properties": {
+        "era": "ancient_greek"
+      },
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.943477"
+    },
+    {
+      "name": "Consciousness",
+      "type": "concept",
+      "properties": {
+        "domain": "philosophy_of_mind"
+      },
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.943479"
+    },
+    {
+      "name": "Ethics",
+      "type": "concept",
+      "properties": {
+        "branch": "moral_philosophy"
+      },
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.943480"
+    }
+  ],
+  "relations": [],
+  "custom_data": {}
+}

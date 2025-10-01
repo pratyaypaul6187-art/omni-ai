@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:kb="http://omni-ai.org/knowledge-base#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <kb:KnowledgeBase rdf:about="#a66a9a9bbbeb2b650da6b23ac6d9dd87">
+    <rdfs:label>Medical Knowledge</rdfs:label>
+    <rdfs:comment>Healthcare and medical information</rdfs:comment>
+    <kb:domain>medical</kb:domain>
+    <kb:version>1.0.0</kb:version>
+    <kb:author>Demo System</kb:author>
+  </kb:KnowledgeBase>
+
+  <kb:Fact rdf:ID="fact_0">
+    <kb:content>is_a(human, organism)</kb:content>
+    <kb:confidence>1.0</kb:confidence>
+  </kb:Fact>
+  <kb:Fact rdf:ID="fact_1">
+    <kb:content>has_property(human, cardiovascular_system)</kb:content>
+    <kb:confidence>1.0</kb:confidence>
+  </kb:Fact>
+  <kb:Fact rdf:ID="fact_2">
+    <kb:content>has_property(human, nervous_system)</kb:content>
+    <kb:confidence>1.0</kb:confidence>
+  </kb:Fact>
+  <kb:Fact rdf:ID="fact_3">
+    <kb:content>has_property(aspirin, pain_reliever)</kb:content>
+    <kb:confidence>1.0</kb:confidence>
+  </kb:Fact>
+  <kb:Fact rdf:ID="fact_4">
+    <kb:content>causes(bacteria, infection)</kb:content>
+    <kb:confidence>1.0</kb:confidence>
+  </kb:Fact>
+  <kb:Fact rdf:ID="fact_5">
+    <kb:content>treats(antibiotic, bacterial_infection)</kb:content>
+    <kb:confidence>1.0</kb:confidence>
+  </kb:Fact>
+  <kb:Entity rdf:ID="Human">
+    <rdfs:label>Human</rdfs:label>
+    <kb:type>EntityType.PERSON</kb:type>
+    <kb:organism_type>mammal</kb:organism_type>
+  </kb:Entity>
+  <kb:Entity rdf:ID="Heart">
+    <rdfs:label>Heart</rdfs:label>
+    <kb:type>EntityType.CONCEPT</kb:type>
+    <kb:organ_system>cardiovascular</kb:organ_system>
+  </kb:Entity>
+  <kb:Entity rdf:ID="Aspirin">
+    <rdfs:label>Aspirin</rdfs:label>
+    <kb:type>EntityType.CONCEPT</kb:type>
+    <kb:drug_class>nsaid</kb:drug_class>
+  </kb:Entity>
+</rdf:RDF>

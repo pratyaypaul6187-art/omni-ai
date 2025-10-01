@@ -1,0 +1,39 @@
+Knowledge Base: Medical Knowledge
+Description: Healthcare and medical information
+Domain: medical
+Version: 1.0.0
+Author: Demo System
+Created: 2025-10-01 20:04:02.880700
+Updated: 2025-10-01 20:04:02.880946
+Tags: medical
+
+============================================================
+
+FACTS:
+----------------------------------------
+  1. is_a(human, organism)
+  2. has_property(human, cardiovascular_system)
+  3. has_property(human, nervous_system)
+  4. has_property(aspirin, pain_reliever)
+  5. causes(bacteria, infection)
+  6. treats(antibiotic, bacterial_infection)
+
+RULES:
+----------------------------------------
+  1. IF has_symptom(X, fever) AND has_symptom(X, cough) THEN likely_condition(X, respiratory_infection)
+  2. IF is_a(X, antibiotic) AND has_condition(Y, bacterial_infection) THEN can_treat(X, Y)
+  3. IF age(X, Y) AND Y > 65 THEN at_risk(X, age_related_conditions)
+
+ENTITIES:
+----------------------------------------
+  1. Human (EntityType.PERSON)
+     organism_type: mammal
+  2. Heart (EntityType.CONCEPT)
+     organ_system: cardiovascular
+  3. Aspirin (EntityType.CONCEPT)
+     drug_class: nsaid
+
+RELATIONS:
+----------------------------------------
+  1. Human --has_property--> Heart
+  2. Aspirin --associated_with--> Pain

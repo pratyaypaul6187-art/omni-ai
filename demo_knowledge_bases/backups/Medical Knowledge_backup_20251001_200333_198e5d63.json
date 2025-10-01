@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "id": "198e5d632b4d2ae7e9f6518a5fb6eca1",
+    "name": "Medical Knowledge",
+    "description": "Healthcare and medical information",
+    "domain": "medical",
+    "version": "1.0.0",
+    "created_at": "2025-10-01T20:03:32.949010",
+    "updated_at": "2025-10-01T20:03:32.949255",
+    "author": "Demo System",
+    "tags": [
+      "medical"
+    ],
+    "format": "json",
+    "facts_count": 6,
+    "rules_count": 3,
+    "entities_count": 3,
+    "relations_count": 2,
+    "checksum": "cb54666e36a2d2d8de6cb07a71b92039"
+  },
+  "facts": [
+    {
+      "content": "is_a(human, organism)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:03:32.949027"
+    },
+    {
+      "content": "has_property(human, cardiovascular_system)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:03:32.949030"
+    },
+    {
+      "content": "has_property(human, nervous_system)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:03:32.949032"
+    },
+    {
+      "content": "has_property(aspirin, pain_reliever)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:03:32.949033"
+    },
+    {
+      "content": "causes(bacteria, infection)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:03:32.949034"
+    },
+    {
+      "content": "treats(antibiotic, bacterial_infection)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:03:32.949036"
+    }
+  ],
+  "rules": [
+    {
+      "content": "IF has_symptom(X, fever) AND has_symptom(X, cough) THEN likely_condition(X, respiratory_infection)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:03:32.949037"
+    },
+    {
+      "content": "IF is_a(X, antibiotic) AND has_condition(Y, bacterial_infection) THEN can_treat(X, Y)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:03:32.949038"
+    },
+    {
+      "content": "IF age(X, Y) AND Y > 65 THEN at_risk(X, age_related_conditions)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:03:32.949040"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Human",
+      "type": 

@@ -1,0 +1,113 @@
+{
+  "metadata": {
+    "id": "b976206567eff8e1ad09c53953ba1942",
+    "name": "Science Facts",
+    "description": "Scientific principles and discoveries",
+    "domain": "scientific",
+    "version": "1.0.0",
+    "created_at": "2025-10-01T20:04:02.895704",
+    "updated_at": "2025-10-01T20:04:02.896009",
+    "author": "Demo System",
+    "tags": [
+      "scientific"
+    ],
+    "format": "json",
+    "facts_count": 6,
+    "rules_count": 3,
+    "entities_count": 3,
+    "relations_count": 0,
+    "checksum": ""
+  },
+  "facts": [
+    {
+      "content": "is_a(water, chemical_compound)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.895721"
+    },
+    {
+      "content": "has_formula(water, h2o)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.895723"
+    },
+    {
+      "content": "boils_at(water, 100_celsius)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.895725"
+    },
+    {
+      "content": "freezes_at(water, 0_celsius)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.895726"
+    },
+    {
+      "content": "is_a(photosynthesis, biological_process)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.895727"
+    },
+    {
+      "content": "requires(photosynthesis, sunlight)",
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.895728"
+    }
+  ],
+  "rules": [
+    {
+      "content": "IF is_a(X, gas) AND temperature(X, T) AND T < boiling_point(X) THEN state(X, liquid)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.895729"
+    },
+    {
+      "content": "IF has_property(X, mass) AND has_property(X, acceleration) THEN has_property(X, force)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.895730"
+    },
+    {
+      "content": "IF is_a(X, hypothesis) AND supported_by(X, evidence) THEN theory(X)",
+      "priority": 1,
+      "confidence": 1.0,
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.895732"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Water",
+      "type": "concept",
+      "properties": {
+        "chemical_formula": "H2O"
+      },
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.895733"
+    },
+    {
+      "name": "Photosynthesis",
+      "type": "concept",
+      "properties": {
+        "type": "biological"
+      },
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.895735"
+    },
+    {
+      "name": "Newton",
+      "type": "person",
+      "properties": {
+        "field": "physics"
+      },
+      "source": "template",
+      "added_at": "2025-10-01T20:04:02.895736"
+    }
+  ],
+  "relations": [],
+  "custom_data": {}
+}

@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "id": "a249e96593b59aa37d1caa1e70f8d0f0",
+    "name": "Philosophy Graph",
+    "description": "Knowledge imported from knowledge graph",
+    "domain": "philosophical",
+    "version": "1.0.0",
+    "created_at": "2025-10-01T20:05:47.696706",
+    "updated_at": "2025-10-01T20:05:47.696849",
+    "author": "system",
+    "tags": [
+      "philosophical"
+    ],
+    "format": "json",
+    "facts_count": 0,
+    "rules_count": 0,
+    "entities_count": 3,
+    "relations_count": 2,
+    "checksum": ""
+  },
+  "facts": [],
+  "rules": [],
+  "entities": [
+    {
+      "name": "Human",
+      "type": "concept",
+      "properties": {
+        "category": "species"
+      },
+      "source": "kg_import",
+      "added_at": "2025-10-01T20:05:47.696776"
+    },
+    {
+      "name": "Socrates",
+      "type": "person",
+      "properties": {
+        "era": "ancient",
+        "nationality": "greek"
+      },
+      "source": "kg_import",
+      "added_at": "2025-10-01T20:05:47.696781"
+    },
+    {
+      "name": "Philosophy",
+      "type": "concept",
+      "properties": {
+        "field": "wisdom"
+      },
+      "source": "kg_import",
+      "added_at": "2025-10-01T20:05:47.696783"
+    }
+  ],
+  "relations": [
+    {
+      "source": "d16b55b4-e740-486b-916d-e25fb71dbb19",
+      "relation_type": "is_a",
+      "target": "12938052-7517-4a75-9ec7-351041a52024",
+      "source_origin": "kg_import",
+      "added_at": "2025-10-01T20:05:47.696785"
+    },
+    {
+      "source": "d16b55b4-e740-486b-916d-e25fb71dbb19",
+      "relation_type": "practices",
+      "target": "e42b2798-f573-41bf-849a-25f142c32271",
+      "source_origin": "kg_import",
+      "added_at": "2025-10-01T20:05:47.696787"
+    }
+  ],
+  "custom_data": {}
+}

@@ -1,0 +1,81 @@
+custom_data: {}
+entities:
+- added_at: '2025-10-01T20:05:15.639373'
+  name: Water
+  properties:
+    chemical_formula: H2O
+  source: template
+  type: concept
+- added_at: '2025-10-01T20:05:15.639375'
+  name: Photosynthesis
+  properties:
+    type: biological
+  source: template
+  type: concept
+- added_at: '2025-10-01T20:05:15.639376'
+  name: Newton
+  properties:
+    field: physics
+  source: template
+  type: person
+facts:
+- added_at: '2025-10-01T20:05:15.639361'
+  confidence: 1.0
+  content: is_a(water, chemical_compound)
+  source: template
+- added_at: '2025-10-01T20:05:15.639363'
+  confidence: 1.0
+  content: has_formula(water, h2o)
+  source: template
+- added_at: '2025-10-01T20:05:15.639364'
+  confidence: 1.0
+  content: boils_at(water, 100_celsius)
+  source: template
+- added_at: '2025-10-01T20:05:15.639365'
+  confidence: 1.0
+  content: freezes_at(water, 0_celsius)
+  source: template
+- added_at: '2025-10-01T20:05:15.639367'
+  confidence: 1.0
+  content: is_a(photosynthesis, biological_process)
+  source: template
+- added_at: '2025-10-01T20:05:15.639368'
+  confidence: 1.0
+  content: requires(photosynthesis, sunlight)
+  source: template
+metadata:
+  author: Demo System
+  checksum: b5a88bbd88dc83bc2cbce373d8476ee3
+  created_at: '2025-10-01T20:05:15.639342'
+  description: Scientific principles and discoveries
+  domain: scientific
+  entities_count: 3
+  facts_count: 6
+  format: yaml
+  id: a8897da62e4dc17567808891bc78b790
+  name: Science Facts
+  relations_count: 0
+  rules_count: 3
+  tags:
+  - scientific
+  updated_at: '2025-10-01T20:05:15.653881'
+  version: 1.0.0
+relations: []
+rules:
+- added_at: '2025-10-01T20:05:15.639369'
+  confidence: 1.0
+  content: IF is_a(X, gas) AND temperature(X, T) AND T < boiling_point(X) THEN state(X,
+    liquid)
+  priority: 1
+  source: template
+- added_at: '2025-10-01T20:05:15.639370'
+  confidence: 1.0
+  content: IF has_property(X, mass) AND has_property(X, acceleration) THEN has_property(X,
+    force)
+  priority: 1
+  source: template
+- added_at: '2025-10-01T20:05:15.639371'
+  confidence: 1.0
+  content: IF is_a(X, hypothesis) AND supported_by(X, evidence) THEN theory(X)
+  priority: 1
+  source: template

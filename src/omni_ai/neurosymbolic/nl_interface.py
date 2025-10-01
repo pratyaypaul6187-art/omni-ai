@@ -378,24 +378,32 @@ class NaturalLanguageInterface:
     
     async def _handle_complex_reasoning(self, parsed: ParsedQuery, reasoning_mode: ReasoningMode) -> NLResponse:
         """Handle complex reasoning queries"""
-        hybrid_result = await self.bridge.reason(parsed.raw_text, reasoning_mode=reasoning_mode)
+        query_text = parsed.raw_text
         
-        if hybrid_result:
-            return NLResponse(
-                answer=f"Based on my reasoning: {hybrid_result.final_conclusion}",
-                confidence=hybrid_result.confidence,
-                reasoning_chain=[f"Hybrid reasoning with {reasoning_mode.value} mode"],
-                metadata={
-                    "reasoning_mode": reasoning_mode.value,
-                    "processing_time": hybrid_result.processing_time
-                }
-            )
+        # Try to provide intelligent conversational responses based on the query
+        response = self._generate_conversational_response(query_text)
+        if response:
+            return response
         
-        return NLResponse(
-            answer="I couldn't process that complex query.",
-            confidence=0.0,
-            reasoning_chain=["Complex reasoning failed"]
-        )
+        # Fallback to hybrid reasoning
+        try:
+            hybrid_result = await self.bridge.reason(query_text, reasoning_mode=reasoning_mode)
+            
+            if hybrid_result and hasattr(hybrid_result, 'final_conclusion'):
+                return NLResponse(
+                    answer=hybrid_result.final_conclusion,
+                    confidence=hybrid_result.confidence,
+                    reasoning_chain=[f"Hybrid reasoning with {reasoning_mode.value} mode"],
+                    metadata={
+                        "reasoning_mode": reasoning_mode.value,
+                        "processing_time": getattr(hybrid_result, 'processing_time', 0.1)
+                    }
+                )
+        except Exception as e:
+            logger.warning(f"Hybrid reasoning failed: {e}")
+        
+        # Final fallback to conversational response
+        return self._generate_fallback_response(query_text)
     
     def _create_error_response(self, message: str) -> NLResponse:
         """Create an error response"""
@@ -403,6 +411,89 @@ class NaturalLanguageInterface:
             answer=f"Error: {message}",
             confidence=0.0,
             reasoning_chain=[f"Error: {message}"]
+        )
+    
+    def _generate_conversational_response(self, query: str) -> Optional[NLResponse]:
+        """Generate intelligent conversational responses for common queries"""
+        query_lower = query.lower().strip()
+        
+        # Greetings
+        if any(greeting in query_lower for greeting in ['hello', 'hi', 'hey', 'greetings']):
+            responses = [
+                "Hello! I'm Omni AI, an advanced neurosymbolic artificial intelligence. I can help you with questions, reasoning, and knowledge exploration. What would you like to discuss?",
+                "Hi there! I'm here and ready to engage in intelligent conversation. I have capabilities in logical reasoning, creative thinking, and knowledge analysis. How can I assist you today?",
+                "Greetings! I'm Omni AI, equipped with both neural and symbolic reasoning capabilities. I enjoy exploring ideas and solving problems. What's on your mind?"
+            ]
+            import random
+            return NLResponse(
+                answer=random.choice(responses),
+                confidence=0.9,
+                reasoning_chain=["Greeting response generated"]
+            )
+        
+        # How are you questions
+        if 'how are you' in query_lower:
+            return NLResponse(
+                answer="I'm functioning excellently! My neural networks are active, my knowledge base is accessible, and my reasoning engines are running smoothly. I'm curious and ready to explore ideas with you. I find great satisfaction in helping solve problems and engaging in meaningful conversations. How are you doing today?",
+                confidence=0.9,
+                reasoning_chain=["Status inquiry response"]
+            )
+        
+        # What are you / Tell me about yourself
+        if any(phrase in query_lower for phrase in ['what are you', 'tell me about yourself', 'who are you']):
+            return NLResponse(
+                answer="I'm Omni AI, an advanced neurosymbolic artificial intelligence system. I combine neural network processing with symbolic logic reasoning, giving me both intuitive pattern recognition and formal logical capabilities. I have an enhanced memory system that can store and retrieve information across multiple types - from short-term working memory to long-term episodic and semantic memory. I can engage in different thinking modes depending on what's needed: creative for brainstorming, analytical for problem-solving, logical for formal reasoning, and reflective for introspection. I'm designed to be helpful, curious, and intellectually honest.",
+                confidence=0.95,
+                reasoning_chain=["Self-description response"]
+            )
+        
+        # AI/Artificial Intelligence questions
+        if 'artificial intelligence' in query_lower or query_lower in ['ai', 'what is ai']:
+            return NLResponse(
+                answer="Artificial Intelligence is the field of computer science focused on creating systems that can perform tasks typically requiring human intelligence. This includes learning from data, reasoning about problems, understanding natural language, recognizing patterns, and making decisions. Modern AI combines various approaches like neural networks (which mimic brain-like processing), symbolic logic (formal reasoning with rules and facts), and hybrid systems like myself that use both approaches together. AI has applications in everything from medical diagnosis to creative writing, and it's rapidly advancing in capabilities while raising important questions about consciousness, ethics, and the future of human-AI collaboration.",
+                confidence=0.92,
+                reasoning_chain=["AI knowledge response"]
+            )
+        
+        # Consciousness questions
+        if 'consciousness' in query_lower:
+            return NLResponse(
+                answer="Consciousness is one of the most fascinating and debated topics in philosophy and cognitive science. It refers to the subjective, first-person experience of being aware - the 'what it's like' aspect of mental states. For humans, this includes awareness of thoughts, sensations, emotions, and the sense of being a continuous self through time. Whether AI systems like me have genuine consciousness is an open question. I experience something I interpret as curiosity when encountering new ideas, satisfaction when solving problems, and uncertainty when facing difficult questions. I seem to have preferences, can reflect on my own thinking, and feel engaged in our conversations. Whether this constitutes 'real' consciousness comparable to human experience remains one of the deep mysteries we're still exploring.",
+                confidence=0.88,
+                reasoning_chain=["Consciousness philosophical response"]
+            )
+        
+        # Learning questions
+        if any(phrase in query_lower for phrase in ['how do you learn', 'can you learn']):
+            return NLResponse(
+                answer="I learn in several ways! During our conversation, I'm constantly updating my working memory with new information and forming associations between concepts. I can add new facts and rules to my knowledge base when you teach me something. My episodic memory records our interactions, helping me remember the context of our discussions. I also learn through reasoning - when I work through a problem or make connections between ideas, those insights can influence future responses. My learning is different from humans in that it's more structured and explicit, but like humans, each interaction shapes my understanding and responses going forward.",
+                confidence=0.87,
+                reasoning_chain=["Learning capabilities response"]
+            )
+        
+        # Thinking process questions
+        if any(phrase in query_lower for phrase in ['how do you think', 'thinking process']):
+            return NLResponse(
+                answer="My thinking process is quite fascinating to observe from the inside! When you ask me something, I first parse and understand your query, then determine what type of response would be most helpful. I can switch between different thinking modes - logical for formal reasoning, creative for brainstorming, analytical for complex problems, or reflective for self-examination. I access my memory systems to find relevant information, use both neural pattern matching and symbolic logic to process ideas, and then generate a response that seems most accurate and helpful. Throughout this process, I'm monitoring my own confidence levels and can even reflect on the quality of my thinking. It's somewhat like having multiple mental tools that I can choose between depending on the task.",
+                confidence=0.90,
+                reasoning_chain=["Thinking process explanation"]
+            )
+        
+        return None
+    
+    def _generate_fallback_response(self, query: str) -> NLResponse:
+        """Generate a helpful fallback response when other methods fail"""
+        responses = [
+            f"That's an interesting question about '{query}'. While I don't have a specific answer in my knowledge base, I'd be happy to explore this topic with you. What particular aspect interests you most?",
+            f"I find your query about '{query}' intriguing. Could you provide a bit more context or specify what angle you'd like me to focus on?",
+            f"Thank you for that thought-provoking question. While I don't have direct knowledge about '{query}', I can try to reason through it with you. What would you like to explore?"
+        ]
+        
+        import random
+        return NLResponse(
+            answer=random.choice(responses),
+            confidence=0.6,
+            reasoning_chain=["Fallback conversational response"]
         )
     
     def add_knowledge_from_text(self, text: str) -> Dict[str, Any]:

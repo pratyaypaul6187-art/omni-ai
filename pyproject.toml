@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omni-ai"
+version = "0.1.0"
+description = "Safe, ethical AI tools."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Your Name" }]
+dependencies = []
+
+[project.scripts]
+omni-ai = "omni_ai.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }

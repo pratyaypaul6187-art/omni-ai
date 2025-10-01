@@ -1,0 +1,32 @@
+/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Environments
+.venv/
+venv/
+ENV/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Caches and logs
+.pytest_cache/
+.mypy_cache/
+.cache/
+*.log
+
+# Editors/OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# dotenv and local settings
+.env
+.env.*
